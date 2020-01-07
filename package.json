@@ -1,0 +1,68 @@
+{
+  "name": "cabonline-test",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0",
+    "styled-components": "^4.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "lint": "eslint . --ext .jsx --ext .js --debug",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write \"{,!(node_modules)/**/}*.{js,jsx}\"",
+    "test": "react-scripts test",
+    "test:ci": "react-scripts test --ci --coverage --reporters=default --reporters=jest-junit  --watchAll=false"
+  },
+  "jest": {
+    "coverageReporters": [
+      "cobertura",
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/serviceWorker.js",
+      "!src/index.js",
+      "!src/store.js",
+      "!src/setupTests.js"
+    ]
+  },
+  "jest-junit": {
+    "suiteName": "react unit tests",
+    "output": "./junit.xml",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-jest": "^23.3.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest-junit": "^10.0.0",
+    "jest-svg-transformer": "^1.0.0",
+    "prettier": "^1.19.1"
+  }
+}

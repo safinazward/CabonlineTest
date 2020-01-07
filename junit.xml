@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="react unit tests" tests="5" failures="0" time="19.188">
+  <testsuite name="src\components\HereMap\HereMap.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-07T19:25:40" time="5.713" tests="1">
+    <testcase classname="HereMap-renders without crashing" name="HereMap-renders without crashing" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="src\App.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-07T19:25:40" time="9.019" tests="1">
+    <testcase classname="The app-renders without crashing" name="The app-renders without crashing" time="0.013">
+    </testcase>
+  </testsuite>
+  <testsuite name="src\components\SearchInput\SearchInput.test.js" errors="0" failures="0" skipped="0" timestamp="2020-01-07T19:25:40" time="9.247" tests="3">
+    <testcase classname="SearchInput-renders without crashing" name="SearchInput-renders without crashing" time="0.012">
+    </testcase>
+    <testcase classname="SearchInput-shows options on focus" name="SearchInput-shows options on focus" time="0.076">
+    </testcase>
+    <testcase classname="SearchInput-hides options on blur" name="SearchInput-hides options on blur" time="0.032">
+    </testcase>
+  </testsuite>
+</testsuites>
