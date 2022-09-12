@@ -1,0 +1,43 @@
+#name: Sync Back to Develop
+#
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#jobs:
+#  sync-branches:
+#    runs-on: ubuntu-latest
+#    name: Syncing branches
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+#      - name: Set up Node
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: 12
+#      - name: Opening pull request
+#        id: pull
+#        uses: tretuna/sync-branches@1.2.0
+#        with:
+#          GITHUB_TOKEN:  ${{secrets.GITHUB_TOKEN}}
+#          FROM_BRANCH: 'master'
+#          TO_BRANCH: 'develop'
+
+name: Merge any release branch to uat
+on:
+  push:
+    branches:
+      - master
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Merge master -> develop
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          target_branch: develop
+          github_token: ${{ github.token }}
