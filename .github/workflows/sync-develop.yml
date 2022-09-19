@@ -33,12 +33,11 @@ jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
       - name: Merge master -> develop
-        uses: devmasx/merge-branch@master
+        uses: safinazawad/merge-branch@main
         with:
-          type: now
           target_branch: develop
-          github_token: ${{ github.token }}
+          github_token: ${{secrets.GITHUB_TOKEN}}
           message: "merge branch master into develop"
