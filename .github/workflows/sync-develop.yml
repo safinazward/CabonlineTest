@@ -41,4 +41,4 @@ jobs:
         with:
           target_branch: develop
           github_token: ${{secrets.GITHUB_TOKEN}}
-          message: "merge branch master into develop"
+          commit_message: "merge branch master into develop"
