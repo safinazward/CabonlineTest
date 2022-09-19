@@ -29,6 +29,11 @@ on:
   push:
     branches:
       - master
+permissions:
+  contents: write
+  pull-requests: write
+  repository-projects: write
+
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
