@@ -29,10 +29,6 @@ on:
   push:
     branches:
       - master
-permissions:
-  contents: write
-  pull-requests: write
-  repository-projects: write
 
 jobs:
   merge-branch:
@@ -41,7 +37,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Merging branches
-        uses: safinazward/merge-branch@main
+        uses: safinazward/merge-branch@1.0.1
 
         with:
           target_branch: develop
