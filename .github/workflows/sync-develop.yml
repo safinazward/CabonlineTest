@@ -35,8 +35,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Merge master -> develop
-        uses: safinazawad/merge-branch@main
+      - name: Merging branches
+        uses: safinazward/merge-branch@1.0.0
+
         with:
           target_branch: develop
           github_token: ${{secrets.GITHUB_TOKEN}}
