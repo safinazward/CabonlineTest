@@ -24,7 +24,7 @@
 #          FROM_BRANCH: 'master'
 #          TO_BRANCH: 'develop'
 
-name: Merge any release branch to uat
+name: Sync develop with master
 #on:
 #  push:
 #    branches:
