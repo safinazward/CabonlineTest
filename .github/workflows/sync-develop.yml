@@ -11,6 +11,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  # This workflow contains a single job called "merge-branch"
   merge-branch:
     runs-on: ubuntu-latest
     steps:
