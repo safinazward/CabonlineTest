@@ -1,53 +1,53 @@
-#name: Sync Back to Develop
+##name: Sync Back to Develop
+##
+##on:
+##  push:
+##    branches:
+##      - master
+##
+##jobs:
+##  sync-branches:
+##    runs-on: ubuntu-latest
+##    name: Syncing branches
+##    steps:
+##      - name: Checkout
+##        uses: actions/checkout@v2
+##      - name: Set up Node
+##        uses: actions/setup-node@v1
+##        with:
+##          node-version: 12
+##      - name: Opening pull request
+##        id: pull
+##        uses: tretuna/sync-branches@1.2.0
+##        with:
+##          GITHUB_TOKEN:  ${{secrets.GITHUB_TOKEN}}
+##          FROM_BRANCH: 'master'
+##          TO_BRANCH: 'develop'
 #
+#name: Sync develop with master
 #on:
 #  push:
 #    branches:
 #      - master
+##on:
+##  schedule:
+##    # Runs "at 4 o'clock every day" (see https://crontab.guru)
+##    - cron: "0 4 * * *"
+##  # Allows you to run this workflow manually from the Actions tab
+##  workflow_dispatch:
 #
 #jobs:
-#  sync-branches:
+#  # This workflow contains a single job called "merge-branch"
+#  merge-branch:
 #    runs-on: ubuntu-latest
-#    name: Syncing branches
 #    steps:
-#      - name: Checkout
-#        uses: actions/checkout@v2
-#      - name: Set up Node
-#        uses: actions/setup-node@v1
+#      - uses: actions/checkout@v2
+#
+#      - name: Merging branches
+#        uses: safinazward/merge-branches@v1.0.0
+#
 #        with:
-#          node-version: 12
-#      - name: Opening pull request
-#        id: pull
-#        uses: tretuna/sync-branches@1.2.0
-#        with:
-#          GITHUB_TOKEN:  ${{secrets.GITHUB_TOKEN}}
-#          FROM_BRANCH: 'master'
-#          TO_BRANCH: 'develop'
-
-name: Sync develop with master
-on:
-  push:
-    branches:
-      - master
-#on:
-#  schedule:
-#    # Runs "at 4 o'clock every day" (see https://crontab.guru)
-#    - cron: "0 4 * * *"
-#  # Allows you to run this workflow manually from the Actions tab
-#  workflow_dispatch:
-
-jobs:
-  # This workflow contains a single job called "merge-branch"
-  merge-branch:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Merging branches
-        uses: safinazward/merge-branches@v1.0.0
-
-        with:
-          source_branch: master
-          target_branch: develop
-          github_token: ${{secrets.GITHUB_TOKEN}}
-          commit_message: "Merge branch 'master' into develop"
+#          source_branch: master
+#          target_branch: develop
+#          github_token: ${{secrets.GITHUB_TOKEN}}
+#          commit_message: "Merge branch 'master' into develop"

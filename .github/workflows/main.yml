@@ -1,0 +1,21 @@
+name: Trigger Sync develop with main on each push to main branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  merge-branch:
+    name: Sync develop with main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Merging branches
+        uses: safinazward/merge-branches@v1.0.0
+
+        with:
+          target_branch: develop
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          commit_message: "merge branch master into develop"
